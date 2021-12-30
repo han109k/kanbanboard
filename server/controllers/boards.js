@@ -23,7 +23,7 @@ module.exports.get = async (req, res) => {
       res.status(200).json(distilledQuery);
     })
     .catch((error) => {
-      console.error(error);
+      // console.error(error);
       return res.status(404).json({ message: "Board is not available!" });
     });
 };
@@ -60,7 +60,7 @@ module.exports.create = async (req, res) => {
       res.status(201).json({ message: "Board is created.", data: distilledQuery });
     })
     .catch((error) => {
-      console.log(error);
+      // console.log(error);
       res.status(500).json({
         message: "Kanban board could not be created!",
       });

@@ -42,13 +42,13 @@ function Modal({ show, setShow }) {
         apiCaller
           .get(`/${accessName}`)
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             setBoard(res.data);
             setLoading(false);
             navigate(`/${res.data.accessKey}`);
           })
           .catch((error) => {
-            console.log(error.response.data.message);
+            // console.log(error.response.data.message);
             setErrorMsg(error.response.data.message);
             notify(error.response.data.message);
             setLoading(false);
@@ -60,13 +60,13 @@ function Modal({ show, setShow }) {
         apiCaller
           .post('/', {name: accessName})
           .then((res) => {
-            console.log(res.data.message);
+            // console.log(res.data.message);
             setBoard(res.data.data);
             setLoading(false);
             navigate(`/${res.data.data.accessKey}`);
           })
           .catch((error) => {
-            console.log(error.response.data.message);
+            // console.log(error.response.data.message);
             setErrorMsg(error.response.data.message);
             notify(error.response.data.message);
             setLoading(false);

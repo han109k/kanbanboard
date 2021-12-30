@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== "production") {    // checking if we're in production or development environment
+  require("dotenv").config();
+}
+
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -35,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(mongoSanitize());
 
 /**
- ** ROUTES
+ ** Express ROUTES
  */
 app.use("/", boardRoutes);
 

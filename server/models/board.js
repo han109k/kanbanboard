@@ -19,6 +19,7 @@ BoardSchema.virtual('cards', {
   foreignField: 'board'
 })
 
+// Need to use virtual populate since we don't store 'tasks' in board collection
 BoardSchema.virtual('tasks', {
   ref: "Task",
   localField: "_id",

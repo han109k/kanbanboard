@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { useNavigate, useParams } from "react-router-dom";
 import tw from "tailwind-styled-components/dist/tailwind";
@@ -64,10 +64,10 @@ const Board = () => {
     apiCaller
       .put(`/${accessKey}/tasks`, tasks)
       .then((res) => {
-        console.log("@updateTasks", res.data);
+        // console.log("@updateTasks", res.data);
       })
       .catch((error) => {
-        console.log(error.response.data.message);
+        // console.log(error.response.data.message);
       });
     const newState = {
       ...board,
@@ -86,9 +86,7 @@ const Board = () => {
   }, []);
 
   const handleOnDragEnd = (result) => {
-    // console.log("@handleOnDragEnd");
     const { destination, source, draggableId } = result;
-    // console.log(destination, source, draggableId);
 
     // dropped outside of the list, do nothing
     if (!destination) return;

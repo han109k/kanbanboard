@@ -11,7 +11,6 @@ import Card from "./Card";
 // Icons
 import { FaPlus } from "react-icons/fa";
 import { useGlobalContext } from "../../context/KanbanProvider";
-import { useNavigate } from "react-router-dom";
 
 // Styled components
 const TaskListContainer = tw.div`
@@ -82,14 +81,11 @@ function TaskList({ taskId, name, cards, fetchBoard, loading }) {
 
 // React component for adding a new card to a list
 function CardForm({ setShowForm, taskId, fetchBoard }) {
-  const navigate = useNavigate();
   const { board, setBoard } = useGlobalContext();
   const req = {};
   const [card, setCard] = useState({
     title: "",
     description: "",
-    //TODO remove position property from db model
-    position: 0,
     color: "#333333",
   });
 
@@ -108,13 +104,13 @@ function CardForm({ setShowForm, taskId, fetchBoard }) {
     apiCaller
       .post(`/${board.accessKey}/cards`, req)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         fetchBoard();
         setShowForm(false);
       })
       .catch((error) => {
-        console.log(error);
-        console.log(error.reponse.data.message);
+        // console.log(error);
+        // console.log(error.reponse.data.message);
       });
   };
 

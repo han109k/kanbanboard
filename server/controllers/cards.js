@@ -2,8 +2,8 @@ const Board = require("../models/board");
 const TaskList = require("../models/task");
 const Card = require("../models/card");
 
+// Add a card to a task list and the board
 module.exports.create = async (req, res) => {
-  console.log(req.body);
   const { boardId, taskId, card } = req.body;
   const board = await Board.findById(boardId);
   const task = await TaskList.findById(taskId);
@@ -22,6 +22,7 @@ module.exports.create = async (req, res) => {
   }
 };
 
+//TODO edit card functionality
 module.exports.edit = async (req, res) => {
   const { accessKey, cards } = req.body;
   const board = await Board.findOne({ accessKey });
@@ -42,6 +43,7 @@ module.exports.edit = async (req, res) => {
   // res.redirect(`/${board._id}`);
 };
 
+// Delete a card from the board
 module.exports.delete = async (req, res) => {
   const { _id, taskId } = req.body;
   // Deleting from task list

@@ -2,7 +2,7 @@ const Board = require("../models/board");
 const TaskList = require("../models/task");
 const Card = require("../models/card");
 
-// Update a single tasklist (card moved within the same task list)
+// Update a single task list (card moved within the same task list)
 module.exports.updateTask = async (req, res) => {
   const {
     _id: taskId,
@@ -21,7 +21,7 @@ module.exports.updateTask = async (req, res) => {
   }
 };
 
-// Update tasklists source & destination
+// Card has moved one task to another. Update task lists (source & destination)
 module.exports.updateTasks = async (req, res) => {
   const { source, destination } = req.body;
 

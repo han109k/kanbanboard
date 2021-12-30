@@ -1,4 +1,4 @@
-// Removing ids and version data from mongoose response
+// Reconstructs response object into usable object in frontend React drag&drop
 module.exports = distiller = (obj) => {
   const responseObj = {},
     taskList = {},

@@ -1,7 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { Draggable } from "react-beautiful-dnd";
-import { useGlobalContext } from "../../context/KanbanProvider";
 import tw from "tailwind-styled-components/dist/tailwind";
 import Popup from "reactjs-popup";
 
@@ -16,20 +15,16 @@ const Container = tw.div``;
 function Card({ index, taskId, fetchBoard, _id, title, description, color }) {
   const { accessKey } = useParams();
 
-  const handleEdit = () => {
-    console.log("here");
-  };
-
   const handleDelete = () => {
     apiCaller
       .delete(`/${accessKey}/cards`, { data: { _id, taskId } })
       .then((res) => {
-        console.log("handleDelete");
-        console.log(res.data);
+        // console.log("handleDelete");
+        // console.log(res.data);
         fetchBoard();
       })
       .catch((error) => {
-        console.log(error.response.data.message);
+        // console.log(error.response.data.message);
       });
   };
 
@@ -49,7 +44,7 @@ function Card({ index, taskId, fetchBoard, _id, title, description, color }) {
             <div className="flex justify-between flex-wrap">
               <h1 className="font-bold">{title}</h1>
               {/* Popup menu */}
-              <CardMenu handleEdit={handleEdit} handleDelete={handleDelete} />
+              <CardMenu handleDelete={handleDelete} />
             </div>
             <p className="font-light text-sm">{description}</p>
           </div>
@@ -76,13 +71,14 @@ const CardMenu = ({ handleEdit, handleDelete }) => {
       }}
       arrowStyle={{ color: "#212121" }}
     >
-      <div
+      {/* //TODO edit functionality */}
+      {/* <div
         className="text-xs border-b border-[#757575] pb-1 cursor-pointer"
         onClick={() => handleEdit()}
       >
         Edit card
-      </div>
-      <div className="text-xs pt-1 cursor-pointer" onClick={handleDelete}>
+      </div> */}
+      <div className="text-xs cursor-pointer" onClick={handleDelete}>
         Delete card
       </div>
     </Popup>
