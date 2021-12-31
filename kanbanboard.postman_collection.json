@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "00efeae1-731f-4153-a5bf-4350dda80118",
+		"name": "kanbanboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get board",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/t0trYVmkp0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"t0trYVmkp0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Board",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Project Management\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Board",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Prototype\",\n  \"accessKey\": \"6LKFJJwa3V\",\n  \"cards\": [\n    {\n      \"title\": \"Twilio integration\",\n      \"description\": \"Create a new note via SMS.\",\n      \"position\": 0,\n      \"color\": \"#aaaa00\",\n      \"task\": \"Backlog\"\n    },\n    {\n      \"title\": \"Markdown support\",\n      \"description\": \"\",\n      \"position\": 0,\n      \"color\": \"#ff0000\",\n      \"task\": \"Backlog\"\n    },\n    {\n      \"title\": \"Audio recording\",\n      \"description\": \"Show audio in a note and playback UI\",\n      \"position\": 0,\n      \"color\": \"#ffaa00\",\n      \"task\": \"To Do\"\n    },\n    {\n      \"title\": \"Tablet View\",\n      \"description\": \"\",\n      \"position\": 0,\n      \"color\": \"#ff0000\",\n      \"task\": \"To Do\"\n    },\n    {\n      \"title\": \"Bookmark in note\",\n      \"description\": \"Show rich link UI in a note\",\n      \"position\": 0,\n      \"color\": \"#ffaa00\",\n      \"task\": \"To Do\"\n    },\n    {\n      \"title\": \"Mobile view\",\n      \"description\": \"Functions for both web responsive and native apps.\",\n      \"position\": 0,\n      \"color\": \"#ff0000\",\n      \"task\": \"In progress\"\n    },\n    {\n      \"title\": \"Desktop view\",\n      \"description\": \"PWA for website and native apps.\",\n      \"position\": 0,\n      \"color\": \"#ffaa00\",\n      \"task\": \"In progress\"\n    },\n    {\n      \"title\": \"Formatting options\",\n      \"description\": \"Mobile formatting bar expands and collapses when tapping the format icon\",\n      \"position\": 0,\n      \"color\": \"#ffaa00\",\n      \"task\": \"In progress\"\n    },\n    {\n      \"title\": \"Audio recording\",\n      \"description\": \"Interface for when recording a new audio note\",\n      \"position\": 0,\n      \"color\": \"#00aa11\",\n      \"task\": \"Done\"\n    },\n    {\n      \"title\": \"Bookmarking\",\n      \"description\": \"Interface for when creating a new link note\",\n      \"position\": 0,\n      \"color\": \"#00aa11\",\n      \"task\": \"Done\"\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/q0wQzEFWHE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"q0wQzEFWHE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a card",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"boardId\": \"61c75e686edb921b9c14e8d8\",\n    \"taskId\": \"61c75e686edb921b9c14e8da\",\n    \"card\": {\n        \"title\": \"Markdown support\",\n        \"description\": \"\",\n        \"position\": 0,\n        \"color\": \"#ff0000\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/q0wQzEFWHE/cards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"q0wQzEFWHE",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Tasks",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/q0wQzEFWHE/tasks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"q0wQzEFWHE",
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a card",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\": \"61c9b4ae65aad9ab08fa60cc\",\n    \"taskId\": \"61c75e686edb921b9c14e8dd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/GtysF7M0Cw/cards",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"GtysF7M0Cw",
+						"cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

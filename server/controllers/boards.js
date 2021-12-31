@@ -8,8 +8,8 @@ const gen = new keyGenerator();
 // Get the board with accessKey
 // In mongosh: db.Board.aggregate({$lookup: {from: "Task", localField: "_id", foreignField: "board", as: "tasks"}})
 module.exports.get = async (req, res) => {
-  const { id } = req.params;
-  await Board.findOne({ accessKey: id })
+  const { accessKey } = req.params;
+  await Board.findOne({ accessKey })
     .populate({
       path: "tasks",
       populate: { path: "board", select: "name cards" },

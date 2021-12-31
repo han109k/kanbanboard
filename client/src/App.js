@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Components
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path=":accessKey" element={<Board />} />
+        <Route path="/:accessKey" element={<Board />} />
       </Routes>
     </Router>
   );

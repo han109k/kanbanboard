@@ -1,0 +1,27 @@
+Rast Mobile: Kanban board Task
+
+Frontend: ReactJS, TailwindCSS
+BackEnd: Express, MongoDB, Mongoose
+
+- Proje temelde 3 modelden oluşuyor; Board, Task, Card
+
+# Backend API
+PATH		METHOD		GÖREV
+/:accessKey 	GET		accessKey ile ilişkilendirilmiş board'u getir
+/	 	POST		http request metodu ile iletilen board ismi ile yeni bir board oluştur. 4 adet task'ı otomatik olarak ekler.
+/:id/tasks 	PUT		Task listeslerinde yeri değiştirilen card'ı güncelle (iki farklı task arasında)
+/:id/tasks 	PATCH		Task listesinde yeri değiştirilen card'ı ve task'ı güncelle	(aynı task içerisinde yer değiştiren card)
+/:id/cards 	POST		Board'a ait task içerisinde bir card oluştur
+/:id/cards 	PUT		implement edilmedi
+/:id/cards 	DELETE		Card'ı sil ait olduğu task'ı güncelle
+
+* id -> veritabanındaki primary key. 
+* accessKey -> board oluşturulduktan sonra veritabanına eklenen site üzerinden board'a erişmek için kullanılan değer
+
+# Frontend
+Tasarımı TailwindCSS kullanarak yaptım. react-beatiful-dnd ile sürükle bırak özelliğini ekledim.
+
+Demo site için backend Heroku, frontend Netlify, veritabanı MongoDB Atlas üzerinden sunuluyor.
+
+
+

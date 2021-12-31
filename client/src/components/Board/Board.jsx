@@ -10,6 +10,7 @@ import apiCaller from "../../api/apiCaller";
 import TaskList from "./TaskList";
 import Header from "../Header";
 
+// Styled components
 const Container = tw.div`
   flex
   justify-center
